@@ -1,0 +1,8 @@
+<h1 class="text-3xl font-bold underline">Repositories</h1>
+
+  <div *ngFor="let repo of repos.items">
+    <h2>{{ repo.name }}</h2>
+    <h3>{{ repo.full_name }}</h3>
+    <p>{{ repo.description }}</p>
+  </div>
+  
