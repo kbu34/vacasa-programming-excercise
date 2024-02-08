@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { GithubService } from '../github.service';
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, throwError } from 'rxjs';
@@ -15,10 +14,9 @@ export class RepoListComponent implements OnInit {
   repositories: any[] = [];
   repos: any = 1;
 
-  constructor(private githubService: GithubService, private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient) {}
 
   ngOnInit(): void {
-    this.getRepositories();
     this.getRepos();
   }
 
@@ -35,16 +33,5 @@ export class RepoListComponent implements OnInit {
         return throwError('Something went wrong.');
       })
     )
-  }
-
-  getRepositories() {
-    this.githubService.getRepositories().subscribe(
-      (data: any[]) => {
-        this.repositories = data;
-      },
-      (error) => {
-        console.error('Error fetching repositories:', error);
-      }
-    );
   }
 }

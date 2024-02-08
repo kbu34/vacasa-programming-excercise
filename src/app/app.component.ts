@@ -1,15 +1,16 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterModule, RouterOutlet } from '@angular/router';
 import { RepoListComponent } from './repo-list/repo-list.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { SettingsComponent } from './settings/settings.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RepoListComponent],
-  styleUrl: './app.component.scss',
-  template: `
-    <app-repo-list></app-repo-list>
-    `
+  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, NavbarComponent, SettingsComponent, RepoListComponent],
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'programming-excercise';

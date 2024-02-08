@@ -1,8 +1,15 @@
-<h1 class="text-3xl font-bold underline">Repositories</h1>
+<h1 class="uppercase text-4xl tracking-widest text-[#256d22] p-6">Repositories</h1>
 
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
   <div *ngFor="let repo of repos.items">
-    <h2>{{ repo.name }}</h2>
-    <h3>{{ repo.full_name }}</h3>
-    <p>{{ repo.description }}</p>
+    <div
+      class="p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300"
+    >
+      <div class="flex flex-col items-center justify-center">
+        <h2>{{ repo.name }}</h2>
+        <h3>{{ repo.full_name }}</h3>
+        <p>{{ repo.description }}</p>
+      </div>
+    </div>
   </div>
-  
+</div>
