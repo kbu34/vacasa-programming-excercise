@@ -4,11 +4,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, throwError } from 'rxjs';
 
 @Component({
-  standalone: true,
-  imports:[CommonModule],
-  selector: 'app-repo-list',
-  templateUrl: './repo-list.component.html',
-  styleUrls: ['./repo-list.component.scss'],
+    imports: [CommonModule],
+    selector: 'app-repo-list',
+    templateUrl: './repo-list.component.html',
+    styleUrls: ['./repo-list.component.scss']
 })
 export class RepoListComponent implements OnInit {
   repositories: any[] = [];
